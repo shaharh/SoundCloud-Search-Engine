@@ -35,10 +35,10 @@ export default (coll, prop, cbFunc, container) => { //used to print out dynamic 
         },
         createListItem = (b, cb, img) => {
             let a = document.createElement('li');
-            a.append(b);
             if (img && img != '') {
-                a.prepend(createImg(img));
+                a.appendChild(createImg(img));
             }
+            a.append(b);
             a.addEventListener('click', cb);
             container.appendChild(a);
         },
