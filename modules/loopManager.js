@@ -25,12 +25,12 @@ export default (coll, prop, cbFunc, container) => { //used to print out dynamic 
                                 break;
                         }
                     }
-                    createListItem(b, cb, img);
                 } else {
                     b = coll[i];
                     cb = cbFunc(b);
-                    createListItem(b, cb);
+
                 }
+                createListItem(b, cb, img);
             }
         },
         createListItem = (b, cb, img) => {
