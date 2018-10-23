@@ -12,5 +12,5 @@ export default (results) => { // format and print out results + event listeners
     let resultList = results,
         collection = resultList.collection;
     nextBtnManager(resultList.next_href);
-    loopManager(collection, ['title', 'uri'], (c) => embedManager(c), resultsContainer);
+    loopManager(collection, true, (c) => embedManager(c), resultsContainer);
 };
