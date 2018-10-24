@@ -3,8 +3,8 @@
  */
 
 export default (coll, prop, cbFunc, container) => { //used to print out dynamic data & attach callback functions for 'click' event
-    let c = '',
-        b = '',
+    let b = '',
+        c = '',
         cb = '',
         img = '';
     const dataLoop = () => {
@@ -12,16 +12,17 @@ export default (coll, prop, cbFunc, container) => { //used to print out dynamic 
                 const keys = Object.keys(coll[i]);
                 if (prop) {
                     for (const key in keys) {
+                        const currVal = coll[i][keys[key]];
                         switch (keys[key]) {
                             case 'title' :
-                                b = coll[i][keys[key]];
+                                b = currVal;
                                 break;
                             case 'uri' :
-                                c = coll[i][keys[key]];
+                                c = currVal;
                                 cb = cbFunc(c);
                                 break;
                             case 'artwork_url' :
-                                img = coll[i][keys[key]];
+                                img = currVal;
                                 break;
                         }
                     }
