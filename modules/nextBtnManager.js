@@ -4,14 +4,14 @@
 import getJSON from './getJSON.js';
 import resultManager from './resultsManager.js';
 
-export default (next) => { //manage creation / destruction of 'next' button
+export default (next, container) => { //manage creation / destruction of 'next' button
     let nextBtn = document.getElementById('nextBtn');
     if (nextBtn == null && next != null) {
         let el = document.createElement('a'),
-            btnText = 'next';
+            btnText = 'NEXT >>';
         el.id = 'nextBtn';
         el.append(btnText);
-        app.appendChild(el);
+        container.appendChild(el);
         attachListener(el);
     } else if (nextBtn != null && next == null) {
         app.removeChild(nextBtn);
